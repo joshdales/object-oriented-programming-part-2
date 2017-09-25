@@ -33,4 +33,11 @@ project = {
 
 names = project[:committee]
 
-puts names
+steps = project[:steps]
+
+
+project[:steps].each do |thing|
+  thing[:name] = 'test'
+end
+
+puts project
