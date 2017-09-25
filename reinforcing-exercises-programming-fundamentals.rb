@@ -30,3 +30,7 @@ project = {
     }
   ]
 }
+
+names = project[:committee]
+
+puts names
