@@ -5,39 +5,32 @@ project = {
   id: "3284",
   steps: [
     {description: "conduct interviews",
-     due_date: "August 1, 2018"
-    },
+     due_date: "August 1, 2018"},
     {description: "code of conduct",
-     due_date: "January 1, 2018"
-    },
+     due_date: "January 1, 2018"},
     {description: "compile results",
-     due_date: "November 10, 2018"
-    },
+     due_date: "November 10, 2018"},
     {description: "version 1",
-     due_date: "January 15, 2019"
-    },
+     due_date: "January 15, 2019"},
     {description: "revisions",
-     due_date: "March 30, 2019"
-    },
+     due_date: "March 30, 2019"},
     {description: "version 2",
-     due_date: "July 12, 2019"
-    },
+     due_date: "July 12, 2019"},
     {description: "final edit",
-     due_date: "October 1, 2019"
-    },
+     due_date: "October 1, 2019"},
     {description: "final version",
-     due_date: "November 20, 2019"
-    }
+     due_date: "November 20, 2019"}
   ]
 }
 
-names = project[:committee]
+counter = 0
 
-steps = project[:steps]
-
-
-project[:steps].each do |thing|
-  thing[:name] = 'test'
+project[:steps].each do |add_name|
+    add_name[:person] = project[:committee][counter]
+    counter += 1
+    if counter > 2
+      counter = 0
+    end
 end
 
 puts project
